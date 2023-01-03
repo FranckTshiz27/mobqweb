@@ -1,0 +1,74 @@
+ @import 'variable.scss';
+
+
+
+ .home {
+     background-color: $page-background-color;
+     height: 100vh;
+
+     .main-row {
+         height: 100vh;
+         background-color: yellow;
+
+         .vertical-menu {
+             background-color: $base-color;
+             height: 100%;
+
+             .vertical-menu__header {
+                 height: 13%;
+                 padding: 5%;
+                 .icon {
+                     display: flex;
+                     justify-content: center;
+                     color: $secondary-color;
+                     font-size: 23px;
+                     margin: 0;
+                     cursor: pointer;
+                     width: 20%;
+                     padding: 0;
+                     border-radius: 70%;
+                     transition: all 0.5s;
+                     padding: 10px 3px;
+                     &:hover {
+                         background-color: #bec5c7;
+                     }
+                 }
+
+                 img {
+                     width: 30%;
+                     height: auto;
+                     margin: 0;
+                     padding: 0;
+                 }
+
+                 .identiy-container {
+                     width: 42%;
+                     margin: 0;
+                     padding: 0;
+
+                     .name {
+                         color: #000;
+                         font-weight: 900;
+                         font-size: 13px;
+                         margin: 0;
+                     }
+
+                     .role {
+                         color: rgba(#000, 50%);
+                         font-weight: 400;
+                         font-size: 12px;
+                         margin: 0;
+                     }
+
+                 }
+             }
+
+             .vertical-menu__body {
+                 height: 87%;
+                 padding: 5%;
+             }
+
+         }
+     }
+
+ }
