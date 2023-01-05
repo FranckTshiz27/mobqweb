@@ -1,0 +1,11 @@
+@import 'variable.scss';
+.organization{
+   
+    & h2{
+        font-size:22px;
+        font-weight: 600;
+        color:$table_title_color ;
+        font-family: $roboto_font;
+
+    }
+}
