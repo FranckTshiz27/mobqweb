@@ -1,0 +1,18 @@
+@import 'variable.scss';
+.statusBar{
+    background-color:$base-color;
+    height: 13%;
+    width: 100% !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end !important;
+    padding: 0 2em;
+
+    .icon{
+        color:rgba($color: #000000, $alpha: 0.2);
+        font-size: 2.5em;
+        margin: 0 3px;
+        cursor: pointer;
+    }
+}

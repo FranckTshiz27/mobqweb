@@ -1,23 +1,22 @@
 import '../style/home.scss';
-import { Route, Routes, Switch, useLocation, useNavigate } from "react-router-dom";
+import { Route, Routes,NavLink} from "react-router-dom";
 import Organization from './Organization';
 import Agency from './Agency';
 import Counter from './Counter';
 import Operation from './Operation';
 import { FaDiceSix, FaElementor, FaCalendarDay } from "react-icons/fa";
-import { NavLink, NavItem } from "react-router-dom";
 import { AiTwotoneDashboard } from "react-icons/ai";
 import { RiOrganizationChart } from "react-icons/ri";
 import { BsFileEarmarkTextFill } from "react-icons/bs";
-import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
+import {IoIosArrowForward } from "react-icons/io";
 import { FaWarehouse } from "react-icons/fa";
 import Dashboard from './DashBoard';
 import DayOfWeek from './DayOfWeek';
 import Province from './Province';
 import Zone from './Zone';
 import Commune from './Commune';
-import Register from './Register';
-import { useEffect, useRef, useState } from 'react';
+import {useState} from 'react';
+import StatusBar from '../components/StatusBar';
 
 
 function Home() {
@@ -34,9 +33,9 @@ function Home() {
   }
 
   return (
-    <div className='container-fluid home'>
-      <div className='row main-row'>
-        <div className={drawer ? 'col-2 vertical-menu_close' : 'col-2 vertical-menu'}>
+    <div className='home'>
+      <div className='main-row'>
+        <div className={drawer ? 'vertical-menu_close' : 'vertical-menu'}>
           <div className='row vertical-menu__header d-flex flex-row align-items-center justify-content-between'>
             <i className={drawer ? "fa-solid fa-bars main_icon_selected" : "fa-solid fa-bars icon"} onClick={() => setDrawer(!drawer)}></i>
             <img src='profile.png' alt="le profile de l'utilisateur" />
@@ -98,19 +97,23 @@ function Home() {
           </div>
         </div>
 
-        <div className='col-10'>
-          <Routes>
-            <Route element={<Dashboard />} path="/home" />
-            <Route element={<Organization />} path="/organization" />
-            <Route element={<Agency />} path="/agency" />
-            <Route element={<Counter />} path="/counter" />
-            <Route element={<Operation />} path="/operation" />
-            <Route element={<DayOfWeek />} path="/day" />
-            <Route path='/province' />
-            <Route element={<Province />} path="/registre/province" />
-            <Route element={<Zone />} path="/registre/zone" />
-            <Route element={<Commune />} path="/registre/commune" />
-          </Routes>
+        <div className={'main-container'}>
+          <StatusBar/>
+          <div className='page-container'>
+            <Routes>
+              <Route element={<Dashboard />} path="/home" />
+              <Route element={<Organization />} path="/organization" />
+              <Route element={<Agency />} path="/agency" />
+              <Route element={<Counter />} path="/counter" />
+              <Route element={<Operation />} path="/operation" />
+              <Route element={<DayOfWeek />} path="/day" />
+              <Route path='/province' />
+              <Route element={<Province />} path="/registre/province" />
+              <Route element={<Zone />} path="/registre/zone" />
+              <Route element={<Commune />} path="/registre/commune" />
+            </Routes>
+          </div>
+         
         </div>
       </div>
     </div>

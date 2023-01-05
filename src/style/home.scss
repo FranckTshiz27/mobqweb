@@ -1,10 +1,12 @@
  @import 'variable.scss';
 
  body {
-
      font-size: 13px;
      font-family: $link_font;
-     text-decoration: none !important;
+     text-decoration: none !important;  
+     max-height: 100vh !important;
+     box-sizing: border-box !important;
+     position: relative
  }
 
 
@@ -32,17 +34,50 @@
  .home {
      background-color: $page-background-color;
      height: 100vh;
-
+     max-width: 100%;
+     margin: 0;
+     padding: 0 !important;
      .main-row {
-         height: 100vh;
+        height: 88.5%;
+        display: flex;
+        margin: 0 !important;
+        padding: 0;
+        box-sizing: border-box;
+        width: 100%;
+       .main-container{
+        padding: 0 !important;
+        max-height: 100vh;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        .page-container{
+           width: 100%;
+           height:100%;
+           padding: 0 2em;
+         }
 
+    }
+
+    // .main-container-largest{
+    //     padding: 0 !important;
+    //     box-sizing: border-box;
+    //     width: 95%;
+    //     max-height: 100%;
+    //     height: 100%;
+    //     .page-container{
+    //        width: 100%;
+    //        margin: 0;
+    //        height:100%;
+    //        padding: 0 2em;
+    //      }
+    // }
          .vertical-menu_close {
              position: relative;
-             width: 50px;
+             width: 5%;
              box-shadow: 6px 0px 4px rgba($color: #000000, $alpha: .25);
              position: relative;
              background-color: $base-color;
-             height: 100%;
+             height: 100vh;
              margin: 0;
              padding: 0;
              box-shadow: 6px 0px 4px rgba($color: #000000, $alpha: .25);
@@ -420,13 +455,13 @@
          .vertical-menu {
              position: relative;
              background-color: $base-color;
-             height: 100%;
+             height: 100vh;
              margin: 0;
              padding: 0;
              box-shadow: 6px 0px 4px rgba($color: #000000, $alpha: .25);
              animation-name: open_drawer;
              animation-duration: 1ms;
-            
+             width: 16em;
              .vertical-menu__header {
                  height: 13%;
                  width: 100%;
@@ -487,8 +522,6 @@
                  padding: 0;
                  margin: 0;
                  padding: 0;
-
-
                  & ul {
                      height: 100%;
                      width: 100%;
@@ -577,7 +610,7 @@
                              border-style: solid;
                              height: 2.85em;
                              top: 0.0px;
-                             left: 14.3em;
+                             left: 13.5em;;
                              width: 0.9em;
                          }
 
@@ -656,7 +689,7 @@
                              border-style: solid;
                              height: 2.85em;
                              top: 0.0px;
-                             left: 14.3em;
+                             left: 13.5em;;
                              width: 0.9em;
                          }
                      }
