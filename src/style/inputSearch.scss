@@ -1,0 +1,38 @@
+@import 'variable.scss';
+
+.input-container {
+    background-color: transparent;
+    width: 70%;
+    background-color: #FCFDFE;
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+
+
+    .icon {
+        color: #D9D9D9;
+        font-size: 1.2em;
+        margin: 0 4px;
+    }
+
+    & input {
+        width: 90%;
+        border: none;
+        padding: 5px 0;
+        background-color: #FCFDFE;
+        font-family: $roboto_font;
+        font-size: 13px;
+        color: rgba(0, 0, 0, 0.6);
+
+        &::placeholder {
+            color: #D9D9D9;
+            font-weight: 300;
+            font-size: 13px;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

@@ -2,7 +2,7 @@ const Zone =()=>{
 
     return(
         <>
-        <h1>MON GUICHET</h1>
+        <h1>MA ZONE</h1>
         </>
     )
 

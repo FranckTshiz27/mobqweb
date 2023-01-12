@@ -1,0 +1,54 @@
+@import 'variable.scss';
+
+.myModal {
+    box-sizing: border-box !important;
+    position: absolute !important;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        background-color: #FFF;
+        min-width: 50%;
+        min-height: 40%;
+        border-radius: 5px;
+
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center !important;
+            padding: 10px;
+            border-bottom: 1.5px rgba($color: #050A0F, $alpha: .08) solid;
+
+            & p {
+                margin: 0 !important;
+                color: #313741;
+                font-size: 14px;
+                font-family: $roboto_font;
+                font-weight: 800;
+            }
+
+            &__icon {
+                color: #202224 !important;
+                font-size: 20px;
+            }
+        }
+
+        &__elements {
+            display: flex;
+            flex-direction: column;
+            padding: 0 !important;
+            
+        }
+    }
+}

@@ -1,11 +1,88 @@
 @import 'variable.scss';
-.organization{
-   
-    & h2{
-        font-size:22px;
-        font-weight: 600;
-        color:$table_title_color ;
-        font-family: $roboto_font;
+.organization {
 
+    & h2 {
+        font-size: 22px;
+        font-weight: 600;
+        color: $table_title_color ;
+        font-family: $roboto_font;
+    }
+
+    .organization__hearder {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__table {
+        margin-top: 1em;
+        border-radius: 100px;
+
+        & thead {
+            border-radius: 100em !important;
+            margin-top: 20em;
+            border-radius: 100em !important;
+            border: 1px solid $table_header_color !important;
+            background-color: #FFF !important;
+
+            & tr {
+                border-radius: 100% !important;
+                color: $table_header_text_color !important;
+                vertical-align:middle !important;
+                background-color: #FFF !important;
+                font-family:$roboto_font ;
+                font-weight: 500;
+                font-size: 13px;
+            }
+        }
+
+        tbody{
+            tr:nth-child(even) {
+                background-color:#FFF !important;
+                color: $table_text_color !important;
+                font-family:$roboto_font ;
+                font-weight: 500;
+                font-size: 13px;
+            }
+    
+            tr:nth-child(odd) {
+                background-color: #ECEFF5  !important;
+                color: $table_text_color !important;
+                font-family:$roboto_font;
+                font-weight: 500;
+                font-size: 13px;
+            }
+    
+        }
+      
+        tr{
+            
+            td{
+                display: table-cell;
+                vertical-align:middle !important;
+            }
+            th{
+                width: 20%;
+            }
+          
+            td:nth-child(2){
+                width: 5%;
+            }
+            td:nth-child(3){
+                width: 40%;
+            }
+            td:nth-child(4){
+                width: 5%;
+            }
+            td:nth-child(5){
+                width: 25%;
+                vertical-align:middle 
+            }
+           
+            img{
+                width: 4em !important;
+                height: auto;
+                margin-right: 1em;
+            }
+        }
     }
 }

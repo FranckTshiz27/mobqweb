@@ -1,0 +1,59 @@
+@import 'variable.scss';
+
+.organisation {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+
+    &__informations {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+
+        &__title {
+            width: 20%;
+
+            & p {
+                font-size: 12px;
+                font-weight: 900;
+                color: #313741;
+                font-family: $roboto_font;
+            }
+        }
+
+        &__container {
+            width: 80%;
+        }
+
+        border-bottom: 1.5px rgba($color: #050A0F, $alpha: .08) solid;
+    }
+
+    &__account {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+
+        &__title {
+            width: 20%;
+
+            & p {
+                font-size: 12px;
+                font-weight: 900;
+                color: #313741;
+                font-family: $roboto_font;
+            }
+        }
+
+        &__container {
+            width: 80%;
+        }
+        border-bottom: 1.5px rgba($color: #050A0F, $alpha: .08) solid;
+    }
+
+    &__action-container {
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+    }
+
+}

@@ -1,0 +1,63 @@
+@import 'variable.scss';
+
+.action {
+    border: 1px rgba($color: #000000, $alpha: .1) solid;
+    color: rgba($color: #000000, $alpha: .6);
+    font-family: $roboto_font;
+    font-weight: 500;
+    font-size: 11px;
+    background-color: rgba($color: #FFF, $alpha: .9);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+    padding: 0 3px !important;
+    position: relative;
+    .icon {
+        font-size: 25px;
+        color: rgba($color: #404040, $alpha: .4);
+        margin: 0 !important;
+        margin-left: 2px;
+
+    }
+
+    .mymodal {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba($color: #FFF, $alpha: 1);
+        height: 5em;
+        position: absolute;
+        width: 7em;
+        top: 2.6em;
+        z-index: 999 !important;
+        box-shadow: 0px 0px 2px 1px rgba(#000,.25);
+        border-radius: 2px;
+        justify-content: space-around;
+
+        & button{
+            background-color: transparent;
+            border: none;
+            text-align: left;
+            font-family:$roboto_font;
+            font-size: 11px;
+            font-weight: 600;
+            color: #373636;
+            vertical-align:middle;
+            padding: 5px 2px;
+            &:hover{
+                background-color: rgba($color: #000000, $alpha: .1);
+            }
+        }
+
+
+        button:nth-child(1){
+            color:#F07A88;
+        }
+    }
+    
+    .mymodal_closed {
+        display: none !important;
+        width: 0;
+    }
+}
+

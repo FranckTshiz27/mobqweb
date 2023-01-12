@@ -1,0 +1,21 @@
+@import 'variable.scss';
+
+.cancelButton {
+    background-color: transparent !important;
+    border-radius: 100px !important;
+    padding: 6px 15px !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    font-family: $roboto_font !important;
+    font-size: 12px !important;
+    font-weight: 400;
+    color: #000;
+    margin-right: 5px;
+
+    &:focus {
+        outline: none !important;
+        border: none !important;
+        font-weight: 700;
+
+    }
+}
