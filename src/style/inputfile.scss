@@ -1,0 +1,49 @@
+@import 'variable.scss';
+
+.inputfile {
+    border: 2px #D6D9E0 dashed;
+    padding: 0;
+    display: flex;
+    padding: 3px 10px !important;
+    margin-top: 20px;
+    & input {
+        height: 100% !important;
+        margin: 0 !important;
+        width: 0;
+        display: none !important;
+    }
+
+    .inputlabel {
+        display: flex !important;
+        justify-content: flex-start;
+        align-items: center !important;
+        margin: 0 !important;
+        width: 100%;
+
+        &__icon_container {
+            padding: 10px;
+            background-color: #D9D9D9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .icon {
+                font-size: 20px;
+            }
+        }
+
+
+        & h3 {
+
+            margin-left: 10px;
+            display: flex;
+            vertical-align: middle;
+            margin-top: 12px;
+            color: #313741;
+            font-size: 14px;
+            font-family: $roboto_font;
+            font-weight: 800;
+        }
+    }
+
+}

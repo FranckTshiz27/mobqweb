@@ -3,8 +3,8 @@ import '../style/formControl.scss';
 const TextAreaComponent = ({ id, label,number}) => {
 
     return (
-        <div class="mb-3">
-            <label for={id} class="form-label mylabel">{label}</label>
+        <div class="mb-2">
+            <label htmlFor={id} class="form-label mylabel">{label}</label>
             <textarea class="form-control" id={id} rows={`${number}`}></textarea>
         </div>
     )

@@ -7,8 +7,8 @@ const ButtonNew =({onClickShow})=>{
     }
     return(
         <button type="button" className="btn btn-primary buttonNew" data-bs-toggle="modal" 
-        data-bs-target="#staticBackdrop">
-           <FiPlus className='icon' onClick={handleClickShow}/> Nouvelle organisation
+        data-bs-target="#staticBackdrop" onClick={handleClickShow}>
+           <FiPlus className='icon'/> Nouvelle organisation
         </button>
     )
 

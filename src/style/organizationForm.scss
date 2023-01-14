@@ -3,13 +3,12 @@
 .organisation {
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-
+    overflow-y:auto !important;
+    max-height:37em!important ;
     &__informations {
         display: flex;
         justify-content: space-between;
         padding: 10px;
-
         &__title {
             width: 20%;
 

@@ -9,6 +9,7 @@ import InputControl from '../components/InputControl';
 import TextAreaComponent from '../components/TextAreaComponent';
 import SaveButton from '../components/SaveButton';
 import CancelButton from '../components/CancelButton';
+import FormFileControl from '../components/InputFileControl';
 const Organization = () => {
 
     const [close, setClose] = useState(false);
@@ -23,7 +24,7 @@ const Organization = () => {
     }
 
     return (
-        <div className='organization' onClick={() => { ParentClicked() }}>
+        <div className='organization' onClick={() => { ParentClicked()}}>
             <h2>40 organisations</h2>
             <div className='organization__hearder'>
                 <InputSearch placeHolderText={'Rechercher une organisation par son nom '} />
@@ -77,7 +78,7 @@ const Organization = () => {
                     </tr>
                 </tbody>
             </table>
-            <GeneralModal title={"Nouvelle organisation "}>
+            <GeneralModal title={"Nouvelle organisation"} open={openModal} handleCloseAndOpen={onClickShow}>
                 <form className='organisation'>
                     <div className='organisation__informations'>
                         <div className='organisation__informations__title'>
@@ -87,6 +88,7 @@ const Organization = () => {
                             <InputControl label={"Nom complet de l'entreprise"} type={'text'} id={'nom'} />
                             <InputControl label={"Sigle"} />
                             <TextAreaComponent label={'Mission en peu de mots'} number={2} />
+                            <FormFileControl id={'logo'}/>
                         </div>
                     </div>
                     <div className='organisation__account'>

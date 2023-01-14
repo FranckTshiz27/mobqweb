@@ -14,7 +14,13 @@
 
     &:focus {
         outline: none !important;
-        border: none !important;
+        border: 0 !important;
+        font-weight: 700;
+
+    }
+    &:hover {
+        outline: none !important;
+        border: 0 !important;
         font-weight: 700;
 
     }
