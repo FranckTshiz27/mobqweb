@@ -1,5 +1,6 @@
 import '../style/organization.scss';
 import '../style/organizationForm.scss';
+import '../style/logoChangeContainer.scss';
 import InputSearch from '../components/InputSearch';
 import ButtonNew from '../components/ButtonNew';
 import Action from '../components/Action';
@@ -14,6 +15,7 @@ const Organization = () => {
 
     const [close, setClose] = useState(false);
     const [openModal, setOpenModal] = useState(false);
+    const [openLogoModal, setOpenLogoModal] = useState(false);
 
     const ParentClicked = () => {
         setClose(false)
@@ -23,8 +25,11 @@ const Organization = () => {
         setOpenModal(!openModal)
     }
 
+    const onClickShowLogoModal = () => {
+        setOpenLogoModal(!openLogoModal)
+    }
     return (
-        <div className='organization' onClick={() => { ParentClicked()}}>
+        <div className='organization' onClick={() => { ParentClicked() }}>
             <h2>40 organisations</h2>
             <div className='organization__hearder'>
                 <InputSearch placeHolderText={'Rechercher une organisation par son nom '} />
@@ -46,35 +51,35 @@ const Organization = () => {
                         <td>Mark</td>
                         <td>Otto</td>
                         <td>05/10/2020</td>
-                        <td><Action close={close} /></td>
+                        <td><Action close={close} openLogoModal={onClickShowLogoModal}/></td>
                     </tr>
                     <tr>
                         <th scope="row"><img src='tmb.png' className='rounded' />TMB </th>
                         <td>Jacob</td>
                         <td>Thornton</td>
                         <td>05/10/2020</td>
-                        <td><Action close={close} /></td>
+                        <td><Action close={close}  openLogoModal={onClickShowLogoModal}/></td>
                     </tr>
                     <tr>
                         <th scope="row"> <img src='rawbank.png' className='rounded' /> RAW BANK</th>
                         <td >Larry the Bird</td>
                         <td>Thornton</td>
                         <td>05/10/2020</td>
-                        <td><Action close={close} /></td>
+                        <td><Action close={close}  openLogoModal={onClickShowLogoModal}/></td>
                     </tr>
                     <tr>
                         <th scope="row"><img src='turkish-airlines.png' className='rounded' />TURKISH AIRLINES</th>
                         <td>Larry the Bird</td>
                         <td>Thornton</td>
                         <td>05/10/2020</td>
-                        <td><Action close={close} /></td>
+                        <td><Action close={close}  openLogoModal={onClickShowLogoModal}/></td>
                     </tr>
                     <tr>
                         <th scope="row"><img src='regideso.png' className='rounded' />   REGIDESO</th>
                         <td >Larry the Bird</td>
                         <td>Thornton</td>
                         <td>05/10/2020</td>
-                        <td><Action close={close} /></td>
+                        <td><Action close={close}  openLogoModal={onClickShowLogoModal}/></td>
                     </tr>
                 </tbody>
             </table>
@@ -88,7 +93,6 @@ const Organization = () => {
                             <InputControl label={"Nom complet de l'entreprise"} type={'text'} id={'nom'} />
                             <InputControl label={"Sigle"} />
                             <TextAreaComponent label={'Mission en peu de mots'} number={2} />
-                            <FormFileControl id={'logo'}/>
                         </div>
                     </div>
                     <div className='organisation__account'>
@@ -105,6 +109,12 @@ const Organization = () => {
                         <SaveButton label={'Sauvegarder'} />
                     </div>
                 </form>
+            </GeneralModal>
+
+            <GeneralModal title={"Changer le logo de l'entreprise"} open={openLogoModal} handleCloseAndOpen={onClickShowLogoModal}>
+                <div className='logo_container'>
+                <FormFileControl id={'logo'} />
+                </div>  
             </GeneralModal>
         </div>
     )
