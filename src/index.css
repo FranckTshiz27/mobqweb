@@ -22,3 +22,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.error_message{
+  color:#de5a7b;
+  /* float: left; */
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  /* line-height: 20px; */
+  /* margin: 0 20px 10px; */
+  /* width: 200px; */
+}
