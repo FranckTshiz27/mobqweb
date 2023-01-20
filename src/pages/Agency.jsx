@@ -1,9 +1,9 @@
-
+import Loader from "../components/Loader";
 const Agency =()=>{
 
     return(
         <>
-        <h1>MON AGENCE</h1>
+       <Loader></Loader>
         </>
     )
 

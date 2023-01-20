@@ -1,9 +1,10 @@
 import '../style/saveButton.scss';
-const SaveButton = ({ type, label }) => {
+import Loader from './Loader';
+const SaveButton = ({ type, label,isSaving }) => {
 
     return (
         <button className='btn btn-primary saveButton' type={type}>
-            {label}
+            {isSaving?<Loader/>:label}
         </button>
     )
 }

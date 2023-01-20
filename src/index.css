@@ -32,3 +32,32 @@ code {
   /* margin: 0 20px 10px; */
   /* width: 200px; */
 }
+
+body::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: orange; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: blue; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid orange; /* creates padding around scroll thumb */
+}
+
+
+table::-webkit-scrollbar {
+  width: 10px; /* width of the entire scrollbar */
+}
+
+table::-webkit-scrollbar-track {
+  background-color: rgba(167, 163, 163, 0.1); /* color of the tracking area */
+}
+
+table::-webkit-scrollbar-thumb {
+  background-color: #d1e4fa; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 2px solid #aec6f8; /* creates padding around scroll thumb */
+}
