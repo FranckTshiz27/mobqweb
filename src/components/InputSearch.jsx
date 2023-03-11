@@ -1,11 +1,15 @@
-import {MdSearch} from 'react-icons/md';
+import { useState } from 'react';
+import { MdSearch } from 'react-icons/md';
 import '../style/inputSearch.scss';
-const InputSearch =({placeHolderText, handleSearch})=>{
+const InputSearch = ({ placeHolderText, onChangeFilter }) => {
+    const handleChange = (e) => {
+        onChangeFilter(e.target.value)
+    }
 
-    return(
+    return (
         <div className='input-container'>
-            <MdSearch className='icon'/>
-            <input placeholder={placeHolderText}/>
+            <MdSearch className='icon' />
+            <input placeholder={placeHolderText} onChange={(e)=>handleChange(e)}  />
         </div>
     )
 

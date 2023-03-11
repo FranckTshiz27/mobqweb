@@ -2,9 +2,10 @@ import '../style/mymodal.scss';
 import { MdClose } from 'react-icons/md';
 import { useState } from 'react';
 
-const GeneralModal = ({ children, title, open, handleCloseAndOpen }) => {
+const GeneralModal = ({ children, title, open, handleCloseAndOpen,handleOnInit }) => {
     const handleClose = () => {
         handleCloseAndOpen()
+        handleOnInit()
     }
 
     return (

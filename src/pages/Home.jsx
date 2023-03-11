@@ -102,7 +102,7 @@ function Home() {
           <div className='page-container'>
             <Routes>
               <Route element={<Dashboard />} path="/home" />
-              <Route element={<Organization />} path="/organization" />
+              <Route element={<Organization itemsPerPage={8}/>} path="/organization" />
               <Route element={<Agency />} path="/agency" />
               <Route element={<Counter />} path="/counter" />
               <Route element={<Operation />} path="/operation" />
