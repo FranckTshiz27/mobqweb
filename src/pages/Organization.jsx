@@ -109,8 +109,8 @@ const Organization = ({ itemsPerPage }) => {
         }
     }, [isEditing])
     const setHeader = () => {
-        return currentItems.length <= 1 ? `${currentItems.items.length} organisation` :
-            `${currentItems.length} organisations`;
+        return ((currentItems?.length <= 1 ? `${currentItems?.items?.length} organisation` :
+            `${currentItems?.length} organisations`)||0);
     }
 
     const showOrganizations = () => {
