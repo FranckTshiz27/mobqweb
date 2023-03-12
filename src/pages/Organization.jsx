@@ -30,10 +30,10 @@ const Organization = ({ itemsPerPage }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [editingOrganization, setEditingOrganization] = useState();
     const [itemOffset, setItemOffset] = useState(0);
+    const isFiltering = useSelector((state) => state.Organization.isFiltering);
     let isSaving = useSelector((state) => state.Organization.isSaving);
     let organizations = useSelector((state) => state.Organization.organizations);
-    let pageCount
-    let currentItems
+    let pageCount = 0, currentItems
 
     const { register, setValue, formState: { errors }, handleSubmit, reset } =
         useForm({ resolver: yupResolver(OrganizationSchema), mode: 'onBlur' })
@@ -53,7 +53,7 @@ const Organization = ({ itemsPerPage }) => {
         console.log(
             `User requested page number ${event.selected}, which is offset ${newOffset}`
         );
-        console.log(" mongongo oyo opesi nga ".repeat(50));
+      
         setItemOffset(newOffset);
     };
 
@@ -88,14 +88,14 @@ const Organization = ({ itemsPerPage }) => {
         setEditingOrganization(organization)
     }
     const handleChangeFilter = (slug) => {
-        dispatch(filterOrganizationAsync(slug))
+        dispatch(filterOrganizationAsync({ slug, limit: endOffset, page: pageCount }))
     }
     const onInit = () => {
         setIsEditing(false)
     }
 
     useEffect(() => {
-        dispatch(getAllOrganizationsAsync({ limit: endOffset, page: pageCount }))
+        if (!isFiltering) dispatch(getAllOrganizationsAsync({ limit: endOffset, page: pageCount }))
         reset()
     }, [endOffset, pageCount])
 
@@ -109,8 +109,8 @@ const Organization = ({ itemsPerPage }) => {
         }
     }, [isEditing])
     const setHeader = () => {
-        return ((currentItems?.length <= 1 ? `${currentItems?.items?.length} organisation` :
-            `${currentItems?.length} organisations`)||0);
+        return ((currentItems?.length <= 1 ? `${currentItems?.length} organisation` :
+            `${currentItems?.length} organisations`) || 0);
     }
 
     const showOrganizations = () => {

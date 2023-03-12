@@ -37,7 +37,6 @@ export const getAllOrganizationsAsync = createAsyncThunk(
   "organization/getAllOrganizationsAsync",
   async ({limit,page}) => {
     try {
-      console.log(`organization/paginate/${page}/${limit} `.repeat(30));
       const organizations = await (await ApiBase.get(`organization/paginate/${page}/${limit}`)).data;
      
       return organizations;
@@ -67,8 +66,10 @@ export const filterOrganizationAsync = createAsyncThunk(
   "organization/filterOrganizationAsync",
   async (payload) => {
     try {
-      if (""===payload) payload="undefined"
-      const data = await (await ApiBase.get(`organization/filter/${payload}`)).data;
+      let {slug,page,limit} = payload
+      if (""===slug) slug="undefined"
+      if (undefined===page) page=0
+      const data = await (await ApiBase.get(`organization/filter/${slug}/${page}/${limit}`)).data;
       if (data) {
         return data;
       }

@@ -74,7 +74,6 @@ export const OrganizationSlice = createSlice({
     [getAllOrganizationsAsync.fulfilled]: (state, action) => {
       state.isLoading = false;
       state.isLoadingError = false;
-      state.allOrganizations = [];
       state.organizations = {};
       state.organizations={...action.payload};
     },
@@ -102,14 +101,16 @@ export const OrganizationSlice = createSlice({
     },
     [filterOrganizationAsync.fulfilled]: (state, { payload }) => {
       state.isfiltering = false;
-      state.organizations = [];   
-      state.organizations.push(...payload)
+      state.organizations = {};   
+     
+      state.organizations= {...payload};
     },
     [filterOrganizationAsync.pending]: (state, action) => {
       state.isFiltering = true;
     },
     [filterOrganizationAsync.rejected]: (state, action) => {
       state.isFiltering = false;
+   
     }
   }
 });
